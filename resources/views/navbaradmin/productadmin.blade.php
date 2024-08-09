@@ -8,7 +8,7 @@
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/productadmin.css') }}" />
 </head>
 <body id="body-pd">
     <header class="header" id="header">
@@ -23,7 +23,7 @@
                 </a>
 
                 <div class="nav_list">
-                    <a href="#" class="nav_link active">
+                    <a href="{{ route('admin') }}" class="nav_link">
                         <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
                     </a>
@@ -31,11 +31,11 @@
                         <i class='bx bx-menu nav_icon'></i>
                         <span class="nav_name">Menu</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a href="{{ route('productadmin') }}" class="nav_link active">
                         <i class='bx bx-shopping-bag nav_icon'></i>
                         <span class="nav_name">Products</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a href="{{ route('users') }}" class="nav_link">
                         <i class='bx bx-user nav_icon'></i>
                         <span class="nav_name">Users</span>
                     </a>
@@ -51,52 +51,34 @@
             </div>
         </nav>
     </div>
-    <div class="container-wrapper">
-        <div class="container">
-            <div class="text-container">
-              <h3 class="bookk">Menu</h3>
-              <h5 class="bookk">13</h5>
-            </div>
-          </div>
-        <div class="container">
-          <div class="text-container">
-            <h3 class="bookk">Users</h3>
-            <h5 class="bookk">100</h5>
-          </div>
-        </div>
-      </div>
-      <table>
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Name Product</th>
-          <th scope="col">Stock</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Burger Cheese</td>
-          <td>45</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>2</td>
-          <td>Ice Coffe</td>
-          <td>120</td>
-        </tr>
-        <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-      </tbody>
-      <tbody>
-        <tr>
-          <td>3</td>
-          <td>French Fries</td>
-          <td>200</td>
-        </tr>
-        <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-      </tbody>
-    </table>
-    <script src="{{ asset('js/dashboardadmin.js') }}"></script>
+    <div class="table-container">
+        <h2>List Product</h2>
+        <button class="btn btn-primary mb-3">New Product</button>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Harga</th>
+                    <th>Stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Bill Gates</td>
+                    <td>bill.gates@microsoft.com</td>
+                    <td>+123456789</td>
+                    <td>
+                        <button class="btn btn-sm btn-edit">Edit</button>
+                        <button class="btn btn-sm btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <!-- Additional rows can be added here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="{{ asset('js/productadmin.js') }}"></script>
 </body>
 </html>
