@@ -8,7 +8,7 @@
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/petugas.css') }}" />
 </head>
 <body id="body-pd">
     <header class="header" id="header">
@@ -28,16 +28,8 @@
                         <span class="nav_name">Dashboard</span>
                     </a>
                     <a href="#" class="nav_link">
-                        <i class='bx bx-menu nav_icon'></i>
-                        <span class="nav_name">Menu</span>
-                    </a>
-                    <a href="#" class="nav_link">
                         <i class='bx bx-shopping-bag nav_icon'></i>
                         <span class="nav_name">Products</span>
-                    </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-user nav_icon'></i>
-                        <span class="nav_name">Users</span>
                     </a>
                     <a href="#" class="nav_link">
                         <i class='bx bx-user-circle nav_icon'></i>
@@ -97,6 +89,6 @@
         <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
       </tbody>
     </table>
-    <script src="{{ asset('js/dashboardadmin.js') }}"></script>
+    <script src="{{ asset('js/petugas.js') }}"></script>
 </body>
 </html>

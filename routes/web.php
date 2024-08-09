@@ -5,6 +5,8 @@ use App\Http\Controllers\loginadminController;
 use App\Http\Controllers\registeradminController;
 use App\Http\Controllers\loginpetugasController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\petugasController;
+use App\Http\Controllers\productadminController;
 
 
 /*
@@ -30,3 +32,7 @@ Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->na
 
 /* dashboard */
 Route::get('/admin', [adminController::class, 'admin'])->name('admin');
+Route::get('/petugas', [petugasController::class, 'petugas'])->name('petugas');
+
+/* product */
+Route::get('/productadmin', [productadminController::class, 'productadmin'])->name('productadmin');
