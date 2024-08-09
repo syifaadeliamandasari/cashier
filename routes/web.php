@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginadminController;
 use App\Http\Controllers\registeradminController;
 use App\Http\Controllers\loginpetugasController;
-use App\Http\Controllers\dashboardadminController;
+use App\Http\Controllers\adminController;
 
 
 /*
@@ -29,4 +29,4 @@ Route::get('/registeradmin', [registeradminController::class, 'registeradmin'])-
 Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
 
 /* dashboard */
-Route::get('/dashboardadmin', [dashboardadminController::class, 'dashboardadmin'])->name('dashboardadmin');
+Route::get('/admin', [adminController::class, 'admin'])->name('admin');

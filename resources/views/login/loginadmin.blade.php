@@ -26,7 +26,7 @@
         </label>
         <a href="#">Forgot password?</a>
       </div>
-      <button type="submit">Log In</button>
+      <a href="{{ route('admin') }}" class="button-link" ><h4 class="teks">Register Now</h4></a>
       <div class="register">
         <p>Don't have an account? <a href="{{ route('registeradmin') }}">Register</a></p>
       </div>
