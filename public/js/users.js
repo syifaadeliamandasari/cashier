@@ -33,6 +33,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     }
     linkColor.forEach(l=> l.addEventListener('click', colorLink))
-
-     // Your code to run since DOM is loaded and ready
+}
+)
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle form submission for the modal
+    document.getElementById('productForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Add your form submission logic here (e.g., AJAX request)
+        alert('Form submitted');
     });
+});

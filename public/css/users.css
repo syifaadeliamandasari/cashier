@@ -280,3 +280,8 @@ a {
     background-color: #dc3545;
     color: white;
 }
+/* Ensure modal dialog is centered */
+.modal-dialog-centered {
+        width: 500px;
+        height: 500px;
+}

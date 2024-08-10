@@ -8,6 +8,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\petugasController;
 use App\Http\Controllers\productadminController;
 use App\Http\Controllers\usersController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -36,5 +37,15 @@ Route::get('/admin', [adminController::class, 'admin'])->name('admin');
 Route::get('/petugas', [petugasController::class, 'petugas'])->name('petugas');
 
 /* Admin */
-Route::get('/productadmin', [productadminController::class, 'productadmin'])->name('productadmin');
+/* Route::get('/productadmin', [productadminController::class, 'productadmin'])->name('productadmin');
+Route::get('/productadmin', [ProductController::class, 'index'])->name('productadmin');
+Route::post('/productadmin', [ProductController::class, 'store'])->name('products.store');
+Route::delete('/productadmin/{id}', [ProductController::class, 'destroy'])->name('products.destroy'); */
 Route::get('/users', [usersController::class, 'users'])->name('users');
+
+
+Route::get('/productadmin', [productadminController::class, 'productadmin'])->name('productadmin');
+Route::post('/productadmin', [productadminController::class, 'store'])->name('products.store');
+Route::get('products/{id}/edit', [ProductAdminController::class, 'edit'])->name('products.edit');
+Route::put('products/{id}', [ProductAdminController::class, 'update'])->name('products.update');
+Route::delete('/productadmin/{id}', [productadminController::class, 'destroy'])->name('products.destroy');
