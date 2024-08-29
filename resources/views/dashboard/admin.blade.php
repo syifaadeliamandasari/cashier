@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sidebar Menu HTML and CSS</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
                         <i class='bx bx-shopping-bag nav_icon'></i>
                         <span class="nav_name">Products</span>
                     </a>
-                    <a href="{{ route('users') }}" class="nav_link">
+                    <a href="{{ route('users.index') }}" class="nav_link">
                         <i class='bx bx-user nav_icon'></i>
                         <span class="nav_name">Users</span>
                     </a>
@@ -54,7 +54,7 @@
     <div class="container-wrapper">
         <div class="container">
             <div class="text-container">
-              <h3 class="bookk">Menu</h3>
+              <h3 class="bookk">Product</h3>
               <h5 class="bookk">13</h5>
             </div>
           </div>
@@ -98,5 +98,6 @@
       </tbody>
     </table>
     <script src="{{ asset('js/dashboardadmin.js') }}"></script>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
 </body>
 </html>

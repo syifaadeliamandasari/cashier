@@ -28,7 +28,7 @@
       </div>
       <a href="{{ route('admin') }}" class="button-link" ><h4 class="teks">Register Now</h4></a>
       <div class="register">
-        <p>Don't have an account? <a href="{{ route('registeradmin') }}">Register</a></p>
+        <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
       </div>
     </form>
   </div>

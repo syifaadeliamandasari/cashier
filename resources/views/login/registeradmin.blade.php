@@ -9,27 +9,28 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="#">
+    <form action="{{ url('register') }}" method="POST">
+        @csrf
       <h2>Register</h2>
         <div class="input-field">
-        <input type="text" required>
-        <label>Enter your name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="name">Enter your name</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
-        <label>Enter your Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="email">Enter your Email</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
-        <label>Enter your password</label>
+        <input type="password" name="password" id="password" required>
+        <label  for="password">Enter your password</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
-        <label>Enter your confirm password</label>
+        <input type="password" name="password_confirmation" id="password_confirmation"  required>
+        <label  for="password_confirmation">Enter your confirm password</label>
       </div>
       <button type="submit">Sign Up</button>
       <div class="register">
-        <p>Already have an account? <a href="{{ route('loginadmin') }}">Log In</a></p>
+        <p>Already have an account? <a href="{{ route('login') }}">Log In</a></p>
       </div>
     </form>
   </div>

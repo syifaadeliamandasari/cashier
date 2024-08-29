@@ -33,7 +33,7 @@
                         <i class='bx bx-shopping-bag nav_icon'></i>
                         <span class="nav_name">Products</span>
                     </a>
-                    <a href="{{ route('users') }}" class="nav_link">
+                    <a href="{{ route('users.index') }}" class="nav_link">
                         <i class='bx bx-user nav_icon'></i>
                         <span class="nav_name">Users</span>
                     </a>

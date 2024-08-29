@@ -9,6 +9,7 @@ use App\Http\Controllers\petugasController;
 use App\Http\Controllers\productadminController;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -27,20 +28,33 @@ use App\Http\Controllers\ProductController;
 }); */
 
 
-/* login */
-Route::get('/loginadmin', [loginadminController::class, 'loginadmin'])->name('loginadmin');
-Route::get('/registeradmin', [registeradminController::class, 'registeradmin'])->name('registeradmin');
-Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
+Route::get('register', function () {
+    return view('login.registeradmin');
+})->name('register');
+
+Route::post('register', [AuthController::class, 'register']);
+
+Route::get('login', function () {
+    return view('login.loginadmin');
+})->name('login');
+
+Route::post('login', [AuthController::class, 'login']);
+
+Route::get('admin/dashboard', function () {
+    return view('dashboard.admin');
+})->name('admin.dashboard');
+
+Route::get('petugas/dashboard', function () {
+    return view('dashboard.petugas');
+})->name('petugas.dashboard');
+
 
 /* dashboard */
 Route::get('/admin', [adminController::class, 'admin'])->name('admin');
 Route::get('/petugas', [petugasController::class, 'petugas'])->name('petugas');
 
 /* Admin */
-/* Route::get('/productadmin', [productadminController::class, 'productadmin'])->name('productadmin');
-Route::get('/productadmin', [ProductController::class, 'index'])->name('productadmin');
-Route::post('/productadmin', [ProductController::class, 'store'])->name('products.store');
-Route::delete('/productadmin/{id}', [ProductController::class, 'destroy'])->name('products.destroy'); */
+
 Route::get('/users', [usersController::class, 'users'])->name('users');
 
 
@@ -49,3 +63,6 @@ Route::post('/productadmin', [productadminController::class, 'store'])->name('pr
 Route::get('products/{id}/edit', [ProductAdminController::class, 'edit'])->name('products.edit');
 Route::put('products/{id}', [ProductAdminController::class, 'update'])->name('products.update');
 Route::delete('/productadmin/{id}', [productadminController::class, 'destroy'])->name('products.destroy');
+
+Route::resource('users', usersController::class);
+
