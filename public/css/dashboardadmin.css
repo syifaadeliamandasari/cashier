@@ -4,9 +4,9 @@
 /* Root Variables */
 :root {
   --header-height: 3rem;
-  --nav-width: 68px;
-  --first-color: #929292;
-  --first-color-light: #3f3f3f;
+  --nav-width: 72px;
+  --first-color: #6EACDA;
+  --first-color-light: #03346E;
   --white-color: #F7F6FB;
   --body-font: 'Nunito', sans-serif;
   --normal-font-size: 1rem;
@@ -14,7 +14,7 @@
 }
 
 /* Global Styles */
-*,
+*
 ::before,
 ::after {
   box-sizing: border-box;
@@ -56,17 +56,25 @@ a {
 }
 
 .header_img {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  border-radius: 50%;
-  overflow: hidden;
+    width: 5px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90%;
+    overflow: hidden;
+    background-color: #cccccc00; /* Memberikan warna latar belakang jika gambar tidak terisi */
+    flex-shrink: 0; /* Mencegah elemen menyusut jika ada elemen lain di sekitarnya */
 }
 
 .header_img img {
-  width: 40px;
+    width: 100%;
+    height: auto; /* Pertahankan rasio aspek gambar */
+    object-fit: cover;
+    display: block;
+    margin-left: 14px;
 }
+
 
 /* Sidebar Styles */
 .l-navbar {
@@ -108,14 +116,16 @@ a {
 
 .nav_logo-img {
     width: 40px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
-    height: auto; /* Pastikan rasio gambar tetap terjaga */
-    margin-right: 0.5rem; /* Jarak antara gambar dan teks */
+    height: 40px; /* Pastikan rasio gambar tetap terjaga */
+    margin-right: 0.7rem; /* Jarak antara gambar dan teks */
+    border-radius: 20px;
 }
 
 .nav_logo-name {
-    font-weight: 900;
+    font-weight: 800;
     text-decoration: none;
-    color: #3f3f3f;
+    color: #03346E;
+    margin-left: 15px;
 }
 
 .nav_logo-icon {
@@ -267,3 +277,29 @@ a {
   tr:hover {
     background-color: #686d7665;
   }
+
+  .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Pastikan modal memenuhi tinggi layar */
+}
+.modal-content {
+    width: 100%;
+    max-width: 600px; /* Sesuaikan ukuran modal */
+}
+
+
+.form-control {
+    border-radius: 4px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}

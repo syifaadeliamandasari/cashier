@@ -1,13 +1,13 @@
 <?php
 
-// namespace App\Http\Controllers;
+ namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
+ use Illuminate\Http\Request;
 
-// class loginpetugasController extends Controller
-// {
-//     public function loginpetugas()
-//     {
-//     return view('login.loginpetugas');
-//     }
-// }
+ class loginpetugasController extends Controller
+ {
+     public function loginpetugas()
+     {
+     return view('login.loginpetugas');
+     }
+ }

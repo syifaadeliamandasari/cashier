@@ -20,9 +20,10 @@ body::before {
   content: "";
   position: absolute;
   width: 100%;
+  background-color: #6EACDA;
   height: 100%;
-  background: url("/assets/login.png"),#000;
-  background-position: center;
+/*   background: url("/assets/login.png"),#000;
+ */  background-position: center;
   background-size: cover;
 }
 
@@ -31,7 +32,7 @@ body::before {
   border-radius: 8px;
   padding: 30px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid #03346E;
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -44,12 +45,12 @@ form {
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: #03346E;
 }
 
 .input-field {
   position: relative;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #03346E;
   margin: 15px 0;
 }
 
@@ -58,7 +59,7 @@ h2 {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  color: #fff;
+  color: #03346E;
   font-size: 16px;
   pointer-events: none;
   transition: 0.15s ease;
@@ -71,7 +72,7 @@ h2 {
   border: none;
   outline: none;
   font-size: 16px;
-  color: #fff;
+  color: #03346E;
 }
 
 .input-field input:focus~label,
@@ -86,11 +87,11 @@ h2 {
   align-items: center;
   justify-content: space-between;
   margin: 25px 0 35px 0;
-  color: #fff;
+  color: #03346E;
 }
 
 #remember {
-  accent-color: #fff;
+  accent-color: #03346E;
 }
 
 .forget label {
@@ -103,7 +104,7 @@ h2 {
 }
 
 .wrapper a {
-  color: #efefef;
+  color: #03346E;
   text-decoration: none;
 }
 
@@ -128,19 +129,19 @@ h2 {
   .button-link:hover {
     color: #fff; /* Teks putih saat hover */
     background: rgba(0, 0, 0, 0.15); /* Latar belakang hitam transparan saat hover */
-    border-color: #fff; /* Border putih saat hover */
+    border-color: #03346E; /* Border putih saat hover */
   }
 
 .teks{
-    color: #000000;
+    color: #03346E;
 }
 
 .teks:hover {
-    color: #fff;
+    color: #03346E;
 }
 
 .register {
   text-align: center;
   margin-top: 30px;
-  color: #fff;
+  color: #03346E;
 }

@@ -9,6 +9,15 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}" />
+  <style>
+    .table-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    table {
+      width: 48%;
+    }
+  </style>
 </head>
 <body id="body-pd">
     <header class="header" id="header">
@@ -18,18 +27,14 @@
         <nav class="nav">
             <div>
                 <a href="#" class="nav_logo">
-                    <img src="assets/booklogo.png" alt="Logo" class="nav_logo-img">
-                    <span class="nav_logo-name">MochiId</span>
+                    <img src="assets/cute.png" alt="Logo" class="nav_logo-img">
+                    <span class="nav_logo-name">CuteBaju</span>
                 </a>
 
                 <div class="nav_list">
                     <a href="{{ route('admin') }}" class="nav_link active">
                         <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
-                    </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-menu nav_icon'></i>
-                        <span class="nav_name">Menu</span>
                     </a>
                     <a href="{{ route('productadmin') }}" class="nav_link">
                         <i class='bx bx-shopping-bag nav_icon'></i>
@@ -51,6 +56,7 @@
             </div>
         </nav>
     </div>
+
     <div class="container-wrapper">
         <div class="container">
             <div class="text-container">
@@ -65,38 +71,66 @@
           </div>
         </div>
       </div>
-      <table>
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Name Product</th>
-          <th scope="col">Stock</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Burger Cheese</td>
-          <td>45</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>2</td>
-          <td>Ice Coffe</td>
-          <td>120</td>
-        </tr>
-        <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-      </tbody>
-      <tbody>
-        <tr>
-          <td>3</td>
-          <td>French Fries</td>
-          <td>200</td>
-        </tr>
-        <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-      </tbody>
-    </table>
+
+      <!-- Wrapper for both tables -->
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name Product</th>
+              <th scope="col">Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Burger Cheese</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ice Coffe</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>French Fries</td>
+              <td>200</td>
+            </tr>
+            <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name Product</th>
+              <th scope="col">Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Burger Cheese</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ice Coffe</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>French Fries</td>
+              <td>200</td>
+            </tr>
+            <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
+          </tbody>
+        </table>
+      </div>
+
     <script src="{{ asset('js/dashboardadmin.js') }}"></script>
     <script src="js/jquery-3.5.1.slim.min.js"></script>
 </body>

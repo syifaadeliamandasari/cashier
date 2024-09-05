@@ -10,6 +10,7 @@ use App\Http\Controllers\productadminController;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -40,6 +41,8 @@ Route::get('login', function () {
 
 Route::post('login', [AuthController::class, 'login']);
 
+Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
+
 Route::get('admin/dashboard', function () {
     return view('dashboard.admin');
 })->name('admin.dashboard');
@@ -66,3 +69,7 @@ Route::delete('/productadmin/{id}', [productadminController::class, 'destroy'])-
 
 Route::resource('users', usersController::class);
 
+Route::controller(ProfileController::class)->group(function () {
+    Route::get('/profile', 'edit')->name('profile.edit');
+    Route::post('/profile', 'update')->name('profile.update');
+});

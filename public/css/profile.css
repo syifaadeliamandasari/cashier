@@ -1,5 +1,5 @@
 body {
-    color: #03346E;
+    color: #3f3f3f;
     background: #f5f5f5;
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
@@ -13,7 +13,7 @@ body {
 }
 .table-title {
     padding-bottom: 15px;
-    background: #03346E;
+    background: #3f3f3f;
     color: #fff;
     padding: 16px 30px;
     margin: -20px -25px 10px;
@@ -75,7 +75,7 @@ table.table td:last-child i {
 }
 table.table td a {
     font-weight: bold;
-    color: #000000;
+    color: #566787;
     display: inline-block;
     text-decoration: none;
     outline: none !important;
@@ -106,7 +106,7 @@ table.table .avatar {
     font-size: 13px;
     min-width: 30px;
     min-height: 30px;
-    color: #000000;
+    color: #999;
     margin: 0 2px;
     line-height: 30px;
     border-radius: 2px !important;
@@ -187,74 +187,35 @@ table.table .avatar {
 }
 /* Modal styles */
 .modal .modal-dialog {
-    max-width: 400px; /* Custom width */
+    max-width: 400px;
 }
-
 .modal .modal-header, .modal .modal-body, .modal .modal-footer {
-    padding: 20px 30px; /* Custom padding */
+    padding: 20px 30px;
 }
-
 .modal .modal-content {
-    border-radius: 3px; /* Custom border-radius */
-    background-color: #ffffff; /* Ensure background is white */
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5); /* Bootstrap-like shadow */
+    border-radius: 3px;
 }
-
-.modal .modal-header {
-    border-bottom: 1px solid #dee2e6; /* Bootstrap border color */
-    background-color: #007bff; /* Bootstrap primary background */
-    color: white; /* White text for header */
-}
-
 .modal .modal-footer {
-    background: #f8f9fa; /* Bootstrap light background */
-    border-top: 1px solid #dee2e6; /* Bootstrap border color */
-    border-radius: 0 0 3px 3px; /* Custom border-radius */
+    background: #ecf0f1;
+    border-radius: 0 0 3px 3px;
 }
-
 .modal .modal-title {
     display: inline-block;
-    font-size: 18px; /* Adjust font size to match Bootstrap */
-    color: white; /* White text for title */
 }
-
 .modal .form-control {
-    border-radius: 2px; /* Custom border-radius */
+    border-radius: 2px;
     box-shadow: none;
-    border-color: #ced4da; /* Bootstrap border color */
+    border-color: #dddddd;
 }
-
 .modal textarea.form-control {
     resize: vertical;
 }
-
 .modal .btn {
-    border-radius: 4px; /* Custom border-radius */
+    border-radius: 2px;
     min-width: 100px;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    border: none;
 }
-
-.modal .btn:hover {
-    background-color: #0056b3; /* Darker shade for hover */
-}
-
 .modal form label {
     font-weight: normal;
-    font-size: 14px; /* Adjust font size to match Bootstrap */
-}
-
-/* Adding Bootstrap's modal fade-in animation */
-.modal.fade .modal-dialog {
-    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-    transform: translate(0, -25%);
-    -webkit-transform: translate(0, -25%);
-}
-
-.modal.show .modal-dialog {
-    transform: translate(0, 0);
-    -webkit-transform: translate(0, 0);
 }
 
 /* Import Google Font */
@@ -263,9 +224,9 @@ table.table .avatar {
 /* Root Variables */
 :root {
   --header-height: 3rem;
-  --nav-width: 72px;
-  --first-color: #6EACDA;
-  --first-color-light: #03346E;
+  --nav-width: 68px;
+  --first-color: #929292;
+  --first-color-light: #3f3f3f;
   --white-color: #F7F6FB;
   --body-font: 'Nunito', sans-serif;
   --normal-font-size: 1rem;
@@ -369,7 +330,6 @@ a {
     width: 40px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
     height: auto; /* Pastikan rasio gambar tetap terjaga */
     margin-right: 0.5rem; /* Jarak antara gambar dan teks */
-    border-radius: 20px;
 }
 
 .nav_logo-name {
@@ -454,104 +414,55 @@ a {
     padding-left: calc(var(--nav-width) + 188px);
   }
 }
-.container-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-left: 9px;
-    margin-top: 6%;
-    padding-right: 9px;
+
+
+
+body {
+    background: #FFFFFF;
   }
 
-  .container {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    flex-grow: 1;
-    width: 5px;
-    height: 100px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(145, 143, 143, 0.636);
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #FFFFFF;
   }
 
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  .profile-button {
+    background: #5d5d5d;
+    box-shadow: none;
+    border: none;
   }
 
-  .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+  .profile-button:hover {
+    background: #5d5d5d;
   }
 
-  .icon .nav_icon {
-  font-size: 50px;
-  transition: transform 0.3s, color 0.3s;
-  color: #ffffff;
-}
-
-  .bookk {
-    color: #686D76;
-    font-size: 18px;
-    text-align: right;
-  }
-  table {
-    margin-left:20px;
-    width: 97%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  .profile-button:focus {
+    background: #5d5d5d;
+    box-shadow: none;
   }
 
-  th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+  .profile-button:active {
+    background: #5d5d5d;
+    box-shadow: none;
   }
 
-  th {
-    background-color: var(--color-default);
-    color: var(--color-white);
+  .back:hover {
+    color: #0c0c0c;
+    cursor: pointer;
   }
 
-  tr:nth-child(even) {
-    background-color: var(--color-body);
+  .labels {
+    font-size: 11px;
   }
 
-  tr:hover {
-    background-color: #6eabda85;
+  .add-experience:hover {
+    background: #FFFFFF;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #FFFFFF;
   }
-/* Add custom styles for action buttons */
-.table td .btn {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    padding: 5px 8px;
-    margin-top: 4%;
-}
+  .img-thumbnail {
+      border: 1px solid #ddd;
+      border-radius: .25rem;
+  }
 
-.table td .btn i {
-    margin-right: 3px;
-}
-
-.table td .btn-edit {
-    color: #ffffff;
-}
-
-.table td .btn-edit:hover {
-    color: #ffffff;
-}
-
-.table td .btn-delete {
-    color: #ffffff;
-}
-
-.table td .btn-delete:hover {
-    color: #ffffff;
-}

@@ -17,17 +17,13 @@
         <nav class="nav">
             <div>
                 <a href="#" class="nav_logo">
-                    <img src="assets/booklogo.png" alt="Logo" class="nav_logo-img">
-                    <span class="nav_logo-name">MochiId</span>
+                    <img src="assets/cute.png" alt="Logo" class="nav_logo-img">
+                    <span class="nav_logo-name">Cute</span>
                 </a>
                 <div class="nav_list">
                     <a href="{{ route('admin') }}" class="nav_link">
                         <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
-                    </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-menu nav_icon'></i>
-                        <span class="nav_name">Menu</span>
                     </a>
                     <a href="{{ route('productadmin') }}" class="nav_link active">
                         <i class='bx bx-shopping-bag nav_icon'></i>
@@ -57,7 +53,9 @@
                     <div class="row">
                         <div class="col-sm-8"><h2>List <b>Product</b></h2></div>
                         <div class="col-sm-4">
-                            <button type="button" class="btn btn-info add-new" data-toggle="modal" data-target="#addNewModal"><i class="fa fa-plus"></i> Add New</button>
+                            <button type="button" class="btn add-new" style="background-color: #6EACDA; color: white;" data-toggle="modal" data-target="#addNewModal">
+                                <i class="fa fa-plus"></i> Add New
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +90,7 @@
                                     type="button"
                                     class="btn btn-edit"
                                     title="Edit"
-                                    style="background-color: #3f3f3f; color: white; width: 70px"
+                                    style="background-color: #269f1d; color: white; width: 67px"
                                     data-id="{{ $product->id }}"
                                     data-item-code="{{ $product->item_code }}"
                                     data-nama-produk="{{ $product->nama_produk }}"
@@ -120,91 +118,94 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal HTML untuk Edit Produk -->
-<div id="editProductModal" class="modal fade" style="width: 100%;background-color:rgb(66, 68, 68)">
-    <div class="modal-dialog modal-lg">
+<!-- Modal HTML for Edit Product -->
+<div id="editProductModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <form id="editProductForm" method="post" enctype="multipart/form-data" action="{{ route('products.update', 0) }}">
                 @csrf
                 @method('PUT')
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Product</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="editProductModalLabel">Edit Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <input type="hidden" name="id" id="editProductId">
                     <div class="form-group">
-                        <label>Item Code</label>
+                        <label for="editItemCode">Item Code</label>
                         <input type="text" class="form-control" name="item_code" id="editItemCode" required>
                     </div>
                     <div class="form-group">
-                        <label>Nama Produk</label>
+                        <label for="editNamaProduk">Nama Produk</label>
                         <input type="text" class="form-control" name="nama_produk" id="editNamaProduk" required>
                     </div>
                     <div class="form-group">
-                        <label>Harga</label>
+                        <label for="editHarga">Harga</label>
                         <input type="number" class="form-control" name="harga" id="editHarga" required>
                     </div>
                     <div class="form-group">
-                        <label>Stock</label>
+                        <label for="editStock">Stock</label>
                         <input type="number" class="form-control" name="stock" id="editStock" required>
                     </div>
                     <div class="form-group">
-                        <label>Image</label>
+                        <label for="editImage">Image</label>
                         <input type="file" class="form-control" name="image" id="editImage">
                         <div id="currentImage"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-success" value="Save Changes">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Save Changes</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-    <!-- Modal HTML -->
-    <div id="addNewModal" class="modal fade" style="width: 100%;background-color:rgb(66, 68, 68)">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <form id="addNewForm" method="post" enctype="multipart/form-data" action="{{ route('products.store') }}">
-                    @csrf
-                    <div class="modal-header">
-                        <h4 class="modal-title">Add New Product</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<!-- Modal HTML for Add New Product -->
+<div id="addNewModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addNewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form id="addNewForm" method="post" enctype="multipart/form-data" action="{{ route('products.store') }}">
+                @csrf
+                <div class="modal-header">
+                    <h4 class="modal-title" id="addNewModalLabel">Add New Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="item_code">Item Code</label>
+                        <input type="text" class="form-control" name="item_code" id="item_code" required>
                     </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Item Code</label>
-                            <input type="text" class="form-control" name="item_code" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Nama Produk</label>
-                            <input type="text" class="form-control" name="nama_produk" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Harga</label>
-                            <input type="number" class="form-control" name="harga" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Stock</label>
-                            <input type="number" class="form-control" name="stock" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" class="form-control" name="image">
-                        </div>
+                    <div class="form-group">
+                        <label for="nama_produk">Nama Produk</label>
+                        <input type="text" class="form-control" name="nama_produk" id="nama_produk" required>
                     </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                    <div class="form-group">
+                        <label for="harga">Harga</label>
+                        <input type="number" class="form-control" name="harga" id="harga" required>
                     </div>
-                </form>
-            </div>
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" class="form-control" name="stock" id="stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" name="image" id="image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Add</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

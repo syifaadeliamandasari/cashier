@@ -25,10 +25,6 @@
                         <i class='bx bx-grid-alt nav_icon'></i>
                         <span class="nav_name">Dashboard</span>
                     </a>
-                    <a href="#" class="nav_link">
-                        <i class='bx bx-menu nav_icon'></i>
-                        <span class="nav_name">Menu</span>
-                    </a>
                     <a href="{{ route('productadmin') }}" class="nav_link">
                         <i class='bx bx-shopping-bag nav_icon'></i>
                         <span class="nav_name">Products</span>
@@ -57,7 +53,9 @@
                     <div class="row">
                         <div class="col-sm-8"><h2>List <b>User</b></h2></div>
                         <div class="col-sm-4">
-                            <button type="button" class="btn btn-info add-new" data-toggle="modal" data-target="#addNewModal"><i class="fa fa-plus"></i> Add New</button>
+                            <button type="button" class="btn add-new" style="background-color: #6EACDA; color: white;" data-toggle="modal" data-target="#addNewModal">
+                                <i class="fa fa-plus"></i> Add New
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -84,7 +82,7 @@
                                     type="button"
                                     class="btn btn-edit"
                                     title="Edit"
-                                    style="background-color: #3f3f3f; color: white; width: 70px"
+                                    style="background-color: #269f1d; color: white; width: 67px"
                                     data-id="{{ $user->id }}"
                                     data-name="{{ $user->name }}"
                                     data-email="{{ $user->email }}"
