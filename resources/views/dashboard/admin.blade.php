@@ -58,78 +58,67 @@
     </div>
 
     <div class="container-wrapper">
+        <!-- Container for Product Info -->
         <div class="container">
             <div class="text-container">
               <h3 class="bookk">Product</h3>
-              <h5 class="bookk">13</h5>
+              <h5 class="bookk">{{ $products->count() }}</h5> <!-- Menampilkan jumlah produk -->
             </div>
-          </div>
-        <div class="container">
-          <div class="text-container">
-            <h3 class="bookk">Users</h3>
-            <h5 class="bookk">100</h5>
-          </div>
         </div>
-      </div>
 
-      <!-- Wrapper for both tables -->
-      <div class="table-wrapper">
+        <!-- Container for User Info -->
+        <div class="container">
+            <div class="text-container">
+              <h3 class="bookk">Users</h3>
+              <h5 class="bookk">{{ $users->count() }}</h5> <!-- Menampilkan jumlah pengguna -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrapper for both tables -->
+    <div class="table-wrapper">
+        <!-- Table for Products -->
         <table>
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Name Product</th>
-              <th scope="col">Stock</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Burger Cheese</td>
-              <td>45</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Ice Coffe</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>French Fries</td>
-              <td>200</td>
-            </tr>
-            <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-          </tbody>
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name Product</th>
+                    <th scope="col">Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($products as $product)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $product->nama_produk }}</td>
+                    <td>{{ $product->stock }}</td>
+                </tr>
+                @endforeach
+            </tbody>
         </table>
 
+        <!-- Table for Users -->
         <table>
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Name Product</th>
-              <th scope="col">Stock</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Burger Cheese</td>
-              <td>45</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Ice Coffe</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>French Fries</td>
-              <td>200</td>
-            </tr>
-            <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-          </tbody>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($users as $user)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->roll }}</td>
+                </tr>
+                @endforeach
+            </tbody>
         </table>
-      </div>
+    </div>
 
     <script src="{{ asset('js/dashboardadmin.js') }}"></script>
     <script src="js/jquery-3.5.1.slim.min.js"></script>

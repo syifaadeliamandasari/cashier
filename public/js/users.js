@@ -43,3 +43,19 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Form submitted');
     });
 });
+$(document).ready(function() {
+    // Set data for edit modal
+    $('#editUserModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var userId = button.data('id');
+        var userName = button.data('name');
+        var userEmail = button.data('email');
+        var userRoll = button.data('roll');
+
+        var modal = $(this);
+        modal.find('#editUserId').val(userId);
+        modal.find('#editUserName').val(userName);
+        modal.find('#editUserEmail').val(userEmail);
+        modal.find('select[name="roll"]').val(userRoll);
+    });
+});

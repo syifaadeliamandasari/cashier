@@ -83,3 +83,6 @@ Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->na
 Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
 
 Route::get('/menu', [menuController::class, 'menu'])->name('menu');
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+// web.php
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
