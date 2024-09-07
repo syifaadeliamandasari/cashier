@@ -57,3 +57,16 @@ $(document).ready(function(){
                 }
                 linkColor.forEach(l => l.addEventListener('click', colorLink));
             });
+            $(document).on('click', '.btn-edit', function() {
+                var productId = $(this).data('id');
+
+                $.get('/products/' + productId + '/edit', function(product) {
+                    $('#editProductId').val(product.id);
+                    $('#editItemCode').val(product.item_code);
+                    $('#editNamaProduk').val(product.nama_produk);
+                    $('#editHarga').val(product.harga);
+                    $('#editStock').val(product.stock);
+                    $('#currentImage').html('<img src="/storage/' + product.image + '" style="width: 100px;">');
+                    $('#editProductModal').modal('show');
+                });
+            });

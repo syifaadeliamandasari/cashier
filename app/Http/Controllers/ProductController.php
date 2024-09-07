@@ -13,21 +13,34 @@ class ProductController extends Controller
         return view('navbaradmin.productadmin', compact('products')); // Kirim data ke view dengan path yang benar
     }
 
-
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|string|max:255',
+            'item_code' => 'required|string|max:255',
+            'nama_produk' => 'required|string|max:255',
             'harga' => 'required|numeric',
             'stock' => 'required|integer',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
         ]);
 
+        // Jika ada ID produk, lakukan pembaruan, jika tidak, buat produk baru
         if ($request->has('id')) {
-            // Update existing product
             $product = Product::findOrFail($request->id);
             $product->update($validatedData);
+
+            // Perbarui gambar jika ada file baru diunggah
+            if ($request->hasFile('image')) {
+                $imagePath = $request->file('image')->store('products', 'public');
+                $product->update(['image' => $imagePath]);
+            }
         } else {
-            // Create new product
+            // Simpan gambar baru jika ada file
+            if ($request->hasFile('image')) {
+                $imagePath = $request->file('image')->store('products', 'public');
+                $validatedData['image'] = $imagePath;
+            }
+
+            // Buat produk baru
             Product::create($validatedData);
         }
 
@@ -41,4 +54,14 @@ class ProductController extends Controller
 
         return redirect()->route('productadmin')->with('success', 'Product deleted successfully.');
     }
+
+    public function edit($id)
+    {
+        if ($id == 0) {
+            abort(404, 'Product not found');
+        }
+        $product = Product::findOrFail($id);
+        return response()->json($product);
+    }
+
 }

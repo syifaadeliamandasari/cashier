@@ -8,16 +8,7 @@
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}" />
-  <style>
-    .table-wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
-    table {
-      width: 48%;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ asset('css/menu.css') }}" />
 </head>
 <body id="body-pd">
     <header class="header" id="header">
@@ -57,81 +48,8 @@
         </nav>
     </div>
 
-    <div class="container-wrapper">
-        <div class="container">
-            <div class="text-container">
-              <h3 class="bookk">Product</h3>
-              <h5 class="bookk">13</h5>
-            </div>
-          </div>
-        <div class="container">
-          <div class="text-container">
-            <h3 class="bookk">Users</h3>
-            <h5 class="bookk">100</h5>
-          </div>
-        </div>
-      </div>
 
-      <!-- Wrapper for both tables -->
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Name Product</th>
-              <th scope="col">Stock</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Burger Cheese</td>
-              <td>45</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Ice Coffe</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>French Fries</td>
-              <td>200</td>
-            </tr>
-            <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-          </tbody>
-        </table>
-
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Name Product</th>
-              <th scope="col">Stock</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Burger Cheese</td>
-              <td>45</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Ice Coffe</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>French Fries</td>
-              <td>200</td>
-            </tr>
-            <!-- Tambahkan baris-baris data lainnya sesuai kebutuhan -->
-          </tbody>
-        </table>
-      </div>
-
-    <script src="{{ asset('js/dashboardadmin.js') }}"></script>
+    <script src="{{ asset('js/menu.js') }}"></script>
     <script src="js/jquery-3.5.1.slim.min.js"></script>
 </body>
 </html>

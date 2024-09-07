@@ -11,6 +11,9 @@ use App\Http\Controllers\usersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\menuController;
+
+
 
 
 /*
@@ -73,3 +76,10 @@ Route::controller(ProfileController::class)->group(function () {
     Route::get('/profile', 'edit')->name('profile.edit');
     Route::post('/profile', 'update')->name('profile.update');
 });
+
+Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
+
+Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
+Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
+
+Route::get('/menu', [menuController::class, 'menu'])->name('menu');

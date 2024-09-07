@@ -447,7 +447,7 @@ a {
   }
 
   .show {
-    width: calc(var(--nav-width) + 156px);
+    /* width: calc(var(--nav-width) + 156px); */
   }
 
   .body-pd {
