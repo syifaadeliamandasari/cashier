@@ -4,7 +4,7 @@
 /* Root Variables */
 :root {
   --header-height: 3rem;
-  --nav-width: 68px;
+  --nav-width: 72px;
   --first-color: #929292;
   --first-color-light: #3f3f3f;
   --white-color: #F7F6FB;
@@ -267,3 +267,20 @@ a {
   tr:hover {
     background-color: #686d7665;
   }
+  table {
+    border-collapse: collapse; /* Menghindari jarak antara border sel */
+}
+
+table, th, td {
+    border: none; /* Menghapus border pada tabel, header, dan sel */
+}
+
+th, td {
+    padding: 8px; /* Menambahkan padding agar teks tidak terlalu dekat dengan tepi */
+}
+
+/* Opsional: Styling untuk header tabel */
+th {
+    background-color: #f4f4f4; /* Menambahkan latar belakang untuk header tabel */
+    font-weight: bold; /* Membuat teks header tabel lebih tebal */
+}

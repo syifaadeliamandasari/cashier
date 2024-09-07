@@ -70,3 +70,29 @@ $(document).ready(function(){
                     $('#editProductModal').modal('show');
                 });
             });
+            document.addEventListener('DOMContentLoaded', function () {
+                const editButtons = document.querySelectorAll('.btn-edit');
+
+                editButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const id = this.getAttribute('data-id');
+                        const itemCode = this.getAttribute('data-item-code');
+                        const namaProduk = this.getAttribute('data-nama-produk');
+                        const harga = this.getAttribute('data-harga');
+                        const stock = this.getAttribute('data-stock');
+                        const image = this.getAttribute('data-image');
+
+                        document.getElementById('editProductId').value = id;
+                        document.getElementById('editItemCode').value = itemCode;
+                        document.getElementById('editNamaProduk').value = namaProduk;
+                        document.getElementById('editHarga').value = harga;
+                        document.getElementById('editStock').value = stock;
+
+                        if (image) {
+                            document.getElementById('currentImage').innerHTML = `<img src="{{ asset('storage/') }}/${image}" style="width: 100px;">`;
+                        } else {
+                            document.getElementById('currentImage').innerHTML = '';
+                        }
+                    });
+                });
+            });

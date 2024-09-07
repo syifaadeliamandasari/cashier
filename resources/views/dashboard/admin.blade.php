@@ -9,6 +9,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}" />
+  <link rel="icon" href="{{ asset('assets/fashion.png') }}" type="image/png">
   <style>
     .table-wrapper {
       display: flex;
@@ -27,7 +28,7 @@
         <nav class="nav">
             <div>
                 <a href="#" class="nav_logo">
-                    <img src="assets/cute.png" alt="Logo" class="nav_logo-img">
+                    <img src="assets/fashion.png" alt="Logo" class="nav_logo-img">
                     <span class="nav_logo-name">CuteBaju</span>
                 </a>
 
@@ -44,11 +45,11 @@
                         <i class='bx bx-user nav_icon'></i>
                         <span class="nav_name">Users</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a href="{{ route('profile') }}" class="nav_link">
                         <i class='bx bx-user-circle nav_icon'></i>
                         <span class="nav_name">Profile</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a href="{{ route('login') }}" class="nav_link">
                         <i class='bx bx-log-out nav_icon'></i>
                         <span class="nav_name">Log Out</span>
                     </a>
@@ -83,6 +84,7 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Name Product</th>
+                    <th scope="col">Harga</th>
                     <th scope="col">Stock</th>
                 </tr>
             </thead>
@@ -91,6 +93,7 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $product->nama_produk }}</td>
+                    <td>{{ $product->harga }}</td>
                     <td>{{ $product->stock }}</td>
                 </tr>
                 @endforeach

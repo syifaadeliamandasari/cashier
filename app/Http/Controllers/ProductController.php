@@ -1,67 +1,74 @@
 <?php
-
-namespace App\Http\Controllers;
-
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    // Menampilkan halaman produk admin
     public function index()
     {
-        $products = Product::all(); // Ambil semua produk dari database
-        return view('navbaradmin.productadmin', compact('products')); // Kirim data ke view dengan path yang benar
+        $products = Product::all();
+        return view('productadmin', compact('products'));
     }
 
+    // Menyimpan produk baru
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'item_code' => 'required|string|max:255',
-            'nama_produk' => 'required|string|max:255',
+        $request->validate([
+            'item_code' => 'required',
+            'nama_produk' => 'required',
             'harga' => 'required|numeric',
-            'stock' => 'required|integer',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+            'stock' => 'required|numeric',
+            'image' => 'nullable|image'
         ]);
 
-        // Jika ada ID produk, lakukan pembaruan, jika tidak, buat produk baru
-        if ($request->has('id')) {
-            $product = Product::findOrFail($request->id);
-            $product->update($validatedData);
+        $product = new Product;
+        $product->item_code = $request->item_code;
+        $product->nama_produk = $request->nama_produk;
+        $product->harga = $request->harga;
+        $product->stock = $request->stock;
 
-            // Perbarui gambar jika ada file baru diunggah
-            if ($request->hasFile('image')) {
-                $imagePath = $request->file('image')->store('products', 'public');
-                $product->update(['image' => $imagePath]);
-            }
-        } else {
-            // Simpan gambar baru jika ada file
-            if ($request->hasFile('image')) {
-                $imagePath = $request->file('image')->store('products', 'public');
-                $validatedData['image'] = $imagePath;
-            }
-
-            // Buat produk baru
-            Product::create($validatedData);
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('public/images');
+            $product->image = basename($path);
         }
 
-        return redirect()->route('productadmin')->with('success', 'Product saved successfully.');
+        $product->save();
+
+        return redirect()->route('products.index')->with('success', 'Product added successfully');
     }
 
-    public function destroy($id)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'item_code' => 'required',
+            'nama_produk' => 'required',
+            'harga' => 'required|numeric',
+            'stock' => 'required|numeric',
+            'image' => 'nullable|image'
+        ]);
+
         $product = Product::findOrFail($id);
-        $product->delete();
+        $product->item_code = $request->item_code;
+        $product->nama_produk = $request->nama_produk;
+        $product->harga = $request->harga;
+        $product->stock = $request->stock;
 
-        return redirect()->route('productadmin')->with('success', 'Product deleted successfully.');
-    }
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama
+            if ($product->image) {
+                Storage::delete('public/images/' . $product->image);
+            }
 
-    public function edit($id)
-    {
-        if ($id == 0) {
-            abort(404, 'Product not found');
+            // Simpan gambar baru
+            $path = $request->file('image')->store('public/images');
+            $product->image = basename($path);
         }
-        $product = Product::findOrFail($id);
-        return response()->json($product);
+
+        $product->save();
+
+        return redirect()->route('products.index')->with('success', 'Product updated successfully');
     }
 
 }

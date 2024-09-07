@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Petugas</title>
+  <link rel="icon" href="{{ asset('assets/fashion.png') }}" type="image/png">
  <style>
     @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
 
@@ -150,7 +151,7 @@ button:hover {
 <body>
   <div class="wrapper">
     <form action="#">
-      <h2>Login</h2>
+      <h2>Login Petugas</h2>
         <div class="input-field">
         <input type="text" required>
         <label>Enter your email</label>

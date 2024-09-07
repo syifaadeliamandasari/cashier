@@ -12,9 +12,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\menuController;
-
-
-
+use App\Http\Controllers\productpetugasController;
+use App\Http\Controllers\userspetugasController;
+use App\Http\Controllers\profilepetugasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +26,6 @@ use App\Http\Controllers\menuController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
 
 Route::get('register', function () {
     return view('login.registeradmin');
@@ -46,43 +41,24 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
 
-Route::get('admin/dashboard', function () {
-    return view('dashboard.admin');
-})->name('admin.dashboard');
-
-Route::get('petugas/dashboard', function () {
-    return view('dashboard.petugas');
-})->name('petugas.dashboard');
-
-
-/* dashboard */
+/* Admin Dashboard */
 Route::get('/admin', [adminController::class, 'admin'])->name('admin');
-Route::get('/petugas', [petugasController::class, 'petugas'])->name('petugas');
-
-/* Admin */
-
-Route::get('/users', [usersController::class, 'users'])->name('users');
-
-
 Route::get('/productadmin', [productadminController::class, 'productadmin'])->name('productadmin');
 Route::post('/productadmin', [productadminController::class, 'store'])->name('products.store');
-Route::get('products/{id}/edit', [ProductAdminController::class, 'edit'])->name('products.edit');
-Route::put('products/{id}', [ProductAdminController::class, 'update'])->name('products.update');
+Route::get('products/{id}/edit', [productadminController::class, 'edit'])->name('products.edit');
+Route::put('products/{id}', [productadminController::class, 'update'])->name('products.update');
 Route::delete('/productadmin/{id}', [productadminController::class, 'destroy'])->name('products.destroy');
 
-Route::resource('users', usersController::class);
+/* Petugas Dashboard */
+Route::get('/petugas', [petugasController::class, 'petugas'])->name('petugas');
+Route::get('/productpetugas', [productpetugasController::class, 'productpetugas'])->name('productpetugas');
+Route::get('/userspetugas', [userspetugasController::class, 'userspetugas'])->name('userspetugas');
+Route::get('/profilepetugas', [profilepetugasController::class, 'profilepetugas'])->name('profilepetugas');
 
-Route::controller(ProfileController::class)->group(function () {
-    Route::get('/profile', 'edit')->name('profile.edit');
-    Route::post('/profile', 'update')->name('profile.update');
-});
-
-Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
-
-Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
-Route::get('/loginpetugas', [loginpetugasController::class, 'loginpetugas'])->name('loginpetugas');
-
+/* Other Routes */
 Route::get('/menu', [menuController::class, 'menu'])->name('menu');
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
-// web.php
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::post('/users', [usersController::class, 'store'])->name('users.store');
+Route::post('/userspetugas', [userspetugasController::class, 'store'])->name('userspetugas.store');
+Route::resource('products', ProductController::class);
+Route::resource('users', usersController::class);

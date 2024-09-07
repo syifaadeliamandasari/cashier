@@ -31,15 +31,15 @@
                         <i class='bx bx-shopping-bag nav_icon'></i>
                         <span class="nav_name">Products</span>
                     </a>
-                    <a href="{{ route('users.index') }}" class="nav_link active">
+                    <a href="{{ route('userspetugas') }}" class="nav_link active">
                         <i class='bx bx-user nav_icon'></i>
                         <span class="nav_name">Users</span>
                     </a>
-                    <a href="{{ route('profile') }}" class="nav_link">
+                    <a href="{{ route('profilepetugas') }}" class="nav_link">
                         <i class='bx bx-user-circle nav_icon'></i>
                         <span class="nav_name">Profile</span>
                     </a>
-                    <a href="{{ route('login') }}" class="nav_link">
+                    <a href="{{ route('loginpetugas') }}" class="nav_link">
                         <i class='bx bx-log-out nav_icon'></i>
                         <span class="nav_name">Log Out</span>
                     </a>
